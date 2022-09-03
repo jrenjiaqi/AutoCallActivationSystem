@@ -7,4 +7,4 @@ from .models import CallPersonnel
 class CallPersonnelSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = CallPersonnel
-        fields = ('name', 'desc', 'email')
+        fields = ('id', 'name', 'desc', 'email')
