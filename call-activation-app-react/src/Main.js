@@ -9,9 +9,10 @@ import {
   HashRouter
 } from "react-router-dom";
 
-import Home from "./Home";
-import Stuff from "./Stuff";
-import Contact from "./Contact";
+import AllPersonnel from "./AllPersonnel";
+import AddPersonnel from "./AddPersonnel";
+import EditPersonnel from "./EditPersonnel";
+import DeletePersonnel from "./DeletePersonnel";
  
 export default function Main() {
   return (
@@ -19,15 +20,17 @@ export default function Main() {
           <div>
           <h1>Simple SPA</h1>
           <ul className="header">
-              <li><NavLink exact to="/">Home</NavLink></li>
-              <li><NavLink to="/stuff">Stuff</NavLink></li>
-              <li><NavLink to="/contact">Contact</NavLink></li>
+              <li><NavLink exact to="/">View All</NavLink></li>
+              <li><NavLink to="/AddPersonnel">Add</NavLink></li>
+              <li><NavLink to="/EditPersonnel">Edit</NavLink></li>
+              <li><NavLink to="/DeletePersonnel">Delete</NavLink></li>
           </ul>
           <div className="content">
               <Routes>
-                  <Route path="/" element={<Home />}/>
-                  <Route path="/stuff" element={<Stuff />}/>
-                  <Route path="/contact" element={<Contact />}/>
+                  <Route path="/" element={<AllPersonnel />}/>
+                  <Route path="/AddPersonnel" element={<AddPersonnel />}/>
+                  <Route path="/EditPersonnel" element={<EditPersonnel />}/>
+                  <Route path="/DeletePersonnel" element={<DeletePersonnel />}/>
               </Routes>
           </div>
           </div>
