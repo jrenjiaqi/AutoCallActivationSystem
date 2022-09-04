@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from secretkeystore import IMPORTED_SECRET_KEY
+from CallActivationApp.secretkeystore import IMPORTED_SECRET_KEY
 
 import os
 
