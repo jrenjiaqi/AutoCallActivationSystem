@@ -1,21 +1,26 @@
 import React, { Component } from "react";
+import { useState } from "react";
+import axios from "axios";
+
+const baseURL = "http://127.0.0.1:8000/api/v1/CallPersonnel/";
  
-class Home extends Component {
-  render() {
-    return (
-      <div>
-        <h2>HELLO</h2>
-        <p>Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue
-        nec molestie. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.</p>
- 
-        <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
-      </div>
-    );
-  }
+export default function Home() {
+  const [personnel, setPersonnel] = React.useState(null);
+
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      console.log(response)
+      setPersonnel(response.data)
+    })
+  }, []);
+
+  const JSONstring = JSON.stringify(personnel);
+
+  return (
+    <div>
+      <h2>All Personnel on Activation</h2>
+      <p>{JSONstring}</p>
+      <p>^ There should be a JSON string above this message.</p>
+    </div>
+  );
 }
- 
-export default Home;

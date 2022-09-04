@@ -30,9 +30,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Allow CORS FROM LOCALHOST
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+]
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'CallActivationApp',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +56,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # below for CORS
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    # end for CORS
 ]
 
 ROOT_URLCONF = 'AutoCallActivation.urls'
