@@ -8,6 +8,7 @@ export default function AddPersonnel() {
 
   const [isLoading, setIsLoading] = React.useState(false);
 
+  // send POST request to add new member.
   const handleClick = async () => {
     setIsLoading(true);
     try {

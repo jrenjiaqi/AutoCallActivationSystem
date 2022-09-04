@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Table from 'react-bootstrap/Table'
+import {FiEdit} from "react-icons/fi"
+import {RiDeleteBin5Line} from "react-icons/ri"
 
-const baseURL = "http://127.0.0.1:8000/api/v1/CallPersonnel/";
+const baseURL = "http://localhost:8000/api/v1/CallPersonnel/";
  
 export default function AllPersonnel() {
   const [personnel, setPersonnel] = React.useState([]);
@@ -14,6 +16,20 @@ export default function AllPersonnel() {
     })
   }, []);
 
+  const handleEdit = async (id) => {
+    console.log(id);
+  };
+  
+  const handleDelete = async (id) => {
+    console.log(id);
+    axios.delete(`http://localhost:8000/api/v1/CallPersonnel/${id}`)
+        .then(response => console.log("Delete success!"))
+        .catch(error => {
+            console.error('There was an error!', error);
+        });
+    window.location.reload(false);
+  };
+
   return (
     <div>
       <Table striped bordered hover>
@@ -23,6 +39,8 @@ export default function AllPersonnel() {
             <th>Name</th>
             <th>Description</th>
             <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -33,6 +51,8 @@ export default function AllPersonnel() {
                 <td>{person.name}</td>
                 <td>{person.desc}</td>
                 <td>{person.email}</td>
+                <td><FiEdit onClick={() => handleEdit(person.id)}/></td>
+                <td><RiDeleteBin5Line onClick={() => handleDelete(person.id)}/></td>
               </tr>
             )
           }
