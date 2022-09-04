@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { useState } from "react";
 import axios from "axios";
+import Table from 'react-bootstrap/Table'
 
 const baseURL = "http://127.0.0.1:8000/api/v1/CallPersonnel/";
  
@@ -16,11 +16,10 @@ export default function AllPersonnel() {
 
   return (
     <div>
-      <h2>All Personnel on Activation</h2>
-      <table>
+      <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Id Number</th>
+            <th>Id</th>
             <th>Name</th>
             <th>Description</th>
             <th>Email</th>
@@ -38,7 +37,7 @@ export default function AllPersonnel() {
             )
           }
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }
