@@ -30,10 +30,10 @@ export default function EditPersonnel() {
   }, []);
 
   // send PATCH request to edit existing member.
-  const handleClick = () => {
+  const handleClick = async () => {
     setIsLoading(true);
     try {
-      const {data} = axios.patch(
+      const {data} = await axios.patch(
         `http://127.0.0.1:8000/api/v1/CallPersonnel/${in_id}/`,
         {name: name, desc: desc, email: email},
         {
@@ -61,6 +61,7 @@ export default function EditPersonnel() {
         <div class="form-group">
           <label for="formGroupNameInput">Name</label>
           <input 
+            required="required"
             type="text" 
             class="form-control" 
             id="formGroupNameInput" 
@@ -72,6 +73,7 @@ export default function EditPersonnel() {
         <div class="form-group">
           <label for="formGroupDescInput">Description</label>
           <input 
+            required="required"
             type="text" 
             class="form-control" 
             id="formGroupDescInput" 
@@ -83,6 +85,7 @@ export default function EditPersonnel() {
         <div class="form-group">
           <label for="exampleInputEmail">Email address</label>
           <input 
+            required="required"
             type="email" 
             class="form-control" 
             id="exampleInputEmail" 
@@ -94,7 +97,7 @@ export default function EditPersonnel() {
           <br/>
         </div>
         <br/>
-        <button type="submit" class="btn btn-primary" onClick={handleClick}>Submit</button>
+        <button type="button" class="btn btn-primary" onClick={handleClick}>Submit</button>
       </form>
     </div>
   );

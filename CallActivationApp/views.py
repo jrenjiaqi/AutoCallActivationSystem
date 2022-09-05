@@ -15,7 +15,7 @@ def sendEmail(request):
     toAddressList = []
     for e in queryset:
         toAddressList.append(e.email)
-    # send emails.
+    # send emails using AWS SES via Boto3.
     ses = boto3.client('ses')
     status_code = ses.send_templated_email (
         Source = 'jrenjqgithub@gmail.com',

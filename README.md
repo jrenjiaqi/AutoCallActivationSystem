@@ -1,76 +1,54 @@
 # Auto Call Activation System
 <p align="center">
-  <img width="1080" alt="view-all" src="https://user-images.githubusercontent.com/98270848/188371275-9d0f01b5-1f7a-4182-ac70-12253d894dbd.png">
+  <img width="1080" alt="view-all" src="https://user-images.githubusercontent.com/98270848/188439588-7dec1121-a411-4150-ac1e-f01fbb013b65.png">
 </p>
 
-## 1. Environment and Language
-| Area                      | Tech                                           |
-| --------------------------| -----------------------------------------------|
-| Frontend                  | **ReactJS** with Axios                         |
-| Backend                   | **Django** Python Web Framework                |
-| Database                  | **SQLite3**                                    |
-| Cloud Services            | **AWS** SES (Simple Email Service) with Boto3  |
+## 1. Technology Used
+| Area                      | Technology                                     | Associated Client / Library  |
+|:-------------------------:|:----------------------------------------------:|:----------------------------:|
+| Frontend                  | **ReactJS**                                    | Axios                        |
+| Backend                   | **Django**                                     | REST Framework               |
+| Database                  | **SQLite3**                                    | --                           |
+| Cloud Services            | **AWS** Simple Email Service (SES)             | Boto3 (AWS SDK via Python3)  |
 ## 2. Project Objectives
 
 ### 2.1 Create, Read, Update, Delete (CRUD) Web Application
-- Frontend: Single Page Application (SPA)
+#### Frontend, Single Page Application (SPA):
   - Create New Users
+    - <img width="650" alt="add-personnel" src="https://user-images.githubusercontent.com/98270848/188439688-1e732326-399d-465c-ae74-2c1aacf5c40d.png">
   - Read All Users
+    - <img width="650" alt="view-all" src="https://user-images.githubusercontent.com/98270848/188439751-5486446d-b6d5-478c-8e0b-e653bbd61ea9.png">
   - Update Existing Users
+
+https://user-images.githubusercontent.com/98270848/188439848-f59707f3-71aa-4205-881b-ae158073d897.mp4
+
   - Delete Existing Users
-- Backend: 
+
+https://user-images.githubusercontent.com/98270848/188439940-93c2667f-ca92-4de9-b437-049facd5563f.mp4
+
+#### Backend: 
   - Model View Controller (MVC)
-  - Data Serializer
-  - HTTP endpoints
+    - <img width="500" alt="model" src="https://user-images.githubusercontent.com/98270848/188444661-63071631-a97c-4935-a26e-fc28eac039ca.png"> < model
+    - <img width="600" alt="view" src="https://user-images.githubusercontent.com/98270848/188443442-cb437890-0caf-4395-939e-2e25d18abd0d.png"> < view (react)
+    - <img width="700" alt="controller" src="https://user-images.githubusercontent.com/98270848/188444183-1c612060-3473-47c8-b85d-3762e8d32683.png"> < controller
 
-### 2.2 Send 
-- Android Development in Linux (WSL2, Ubuntu, VcXSrv)
-- Android Unit Testing (JUnit)
-- Android Instrumented Testing (Espresso)
+  - REST Framework
+    - <img width="500" alt="serializer" src="https://user-images.githubusercontent.com/98270848/188445958-7db839bb-532b-4c5b-9441-9f8cd9b2ff3c.png"> < Serializer
+    - <img width="600" alt="routes" src="https://user-images.githubusercontent.com/98270848/188446186-0d5206a3-b317-4d4f-bfca-8328c09ebf00.png"> < Routing
+    - <img width="700" alt="endpoints" src="https://user-images.githubusercontent.com/98270848/188446683-8f8730ee-f8cd-4337-9058-3a1d19fb4f32.png"> < HTTP Endpoints
 
-## 3. Project Summary
+### 2.2 Automate Call Activation via Email Service
+- Automatically send email to all existing users saved in web application.
 
-### 3.1 MD5 + Salt >> One-way Encryption >> Password Hashing and Authentication
+https://user-images.githubusercontent.com/98270848/188451932-afd35a52-dfac-4d82-8b25-0f9b1cc6556c.mp4
 
-- User enters password (simulates registration process).
-- User enters password again (simulates logging in).
-- Upon 'encrypt and match' button click, hashed passwords are compared instead of plain text password.
-<p align="center">
-<img width="501" alt="one-way-combined" src="https://user-images.githubusercontent.com/98270848/187902429-cbdaf89b-3cae-4619-9c3b-2634c17d7e71.png">
-</p>
+<img width="900" alt="send-email" src="https://user-images.githubusercontent.com/98270848/188452195-0f64f72c-f0b6-4abe-8099-489b894555a3.png">
 
-### 3.2 AES >> Two-way En/Decryption >> Plain Text to Cipher Text (vice versa)
+## 3. Unit Testing
+<img width="600" alt="test-email" src="https://user-images.githubusercontent.com/98270848/188459163-5a3eb294-fe24-4f4c-a3cf-7d08baa1e591.png">
+<img width="600" alt="test-result" src="https://user-images.githubusercontent.com/98270848/188459209-ffbb1194-bd90-4ae9-ae3b-3c62bf1bb846.png">
 
-- User enters plain text and presses 'encrypt text' button.
-- AES encrypted cipher text is generated.
-- User presses 'decrypt text' button.
-- Plain text is decrypted from cipher text.
-<p align="center">
-<img width="275" alt="two-way-encryption" src="https://user-images.githubusercontent.com/98270848/187905899-cf4992d8-1b54-4849-906a-7a7abb8dbc34.png">
-</p>
-
-### 3.3 Android Development in Linux
-
-- Windows Subsystem for Linux (WSL2) allows for Linux (Ubuntu) use without dual-booting.
-- VcXSrv provides an environment to use Android Studio in Linux.
-- Simple setup required as per [link](https://autoize.com/xfce4-desktop-environment-and-x-server-for-ubuntu-on-wsl-2/).
-<img width="1280" alt="desktop-setup" src="https://user-images.githubusercontent.com/98270848/187907697-9757f617-e982-4456-9ea5-5ee8f0025407.png">
-
-### 3.4 Android Unit Tests
-
-- JUnit Assertions 
-- MD5 Working and Salt Non-Collision Test
-- AES Encryption-then-Decryption Returns Original Plain Text Test
-
-### 3.5 Android Instrumented Tests
-- Ensure One-way Encryption behaves as expected on Android.
-<img width="866" alt="one-way-encryption-ss" src="https://user-images.githubusercontent.com/98270848/187909682-e50480bd-6937-4791-adb8-4b6da4a02ae2.png">
-
-- Ensures Two-way En/Decryption behaves as expected on Android.
-<img width="859" alt="two-way-encryption-ss" src="https://user-images.githubusercontent.com/98270848/187909732-c156eb87-9d1b-4228-b39b-c925c3c317a5.png">
-<img width="414" alt="two-way-encryption-ss-pt2" src="https://user-images.githubusercontent.com/98270848/187909778-d5e5b56c-5387-4da9-bc27-8854ff3c25bb.png">
-
-### 4. Acknowledgements
-- AES Code: https://www.baeldung.com/java-aes-encryption-decryption
-- MD5 and Salt Code: https://www.sourcecodeexamples.net/2020/05/java-md5-hash-with-salt-example.html
-- Security stock image: https://www.istockphoto.com/photos/computer-security
+## 4. Acknowledgements
+- [React & Django Setup Tutorial](https://youtu.be/F9o4GSkSo40)
+- [Django Testing](https://docs.djangoproject.com/en/4.1/topics/testing/overview/)
+- [Single Page Application Template](https://www.kirupa.com/react/creating_single_page_app_react_using_react_router.htm)

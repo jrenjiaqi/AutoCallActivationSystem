@@ -128,3 +128,4 @@ dist
 *.pyc
 AutoCallActivation/secretkeystore.py
 *.pyc
+db.sqlite3

@@ -38,6 +38,7 @@ export default function AddPersonnel() {
         <div class="form-group">
           <label for="formGroupNameInput">Name</label>
           <input 
+            required="required"
             type="text" 
             class="form-control" 
             id="formGroupNameInput" 
@@ -49,6 +50,7 @@ export default function AddPersonnel() {
         <div class="form-group">
           <label for="formGroupDescInput">Description</label>
           <input 
+            required="required"
             type="text" 
             class="form-control" 
             id="formGroupDescInput" 
@@ -60,6 +62,7 @@ export default function AddPersonnel() {
         <div class="form-group">
           <label for="exampleInputEmail">Email address</label>
           <input 
+            required="required"
             type="email" 
             class="form-control" 
             id="exampleInputEmail" 
@@ -71,7 +74,7 @@ export default function AddPersonnel() {
           <br/>
         </div>
         <br/>
-        <button type="submit" class="btn btn-primary" onClick={handleClick}>Submit</button>
+        <button type="button" class="btn btn-primary" onClick={handleClick}>Submit</button>
       </form>
     </div>
   );
