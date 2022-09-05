@@ -18,9 +18,9 @@ export default function Main() {
     <HashRouter>
         <div className="outerTitleWrapper">
             <div className="titleWrapper">
-                <div className="titleLeft"> <h1>Auto Call Activation System</h1> </div>
-                <div className="titleRight"> 
-                    <button id="sendEmailButton" type="button" class="btn btn-danger">Send Email To All</button> 
+                <div className="titleLeft"> <h2>Auto Call Activation System</h2> </div>
+                <div className="titleRight">
+                    <a href="/send/email" id="sendEmailButton" role="button" class="btn btn-danger">Send Email To All</a> 
                 </div>
             </div>
         </div>

@@ -52,6 +52,11 @@ ul.header li a {
   display: table-cell;
 }
 
+.titleLeft > h2 {
+  font-weight: 600;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 .titleRight {
   width: 50%;
   display: table-cell;
@@ -59,4 +64,5 @@ ul.header li a {
 
 #sendEmailButton {
   float: right;
+  font-weight: 700;
 }
