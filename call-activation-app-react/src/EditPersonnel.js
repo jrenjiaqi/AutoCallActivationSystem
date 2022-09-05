@@ -30,10 +30,10 @@ export default function EditPersonnel() {
   }, []);
 
   // send PATCH request to edit existing member.
-  const handleClick = async () => {
+  const handleClick = () => {
     setIsLoading(true);
     try {
-      const {data} = await axios.patch(
+      const {data} = axios.patch(
         `http://127.0.0.1:8000/api/v1/CallPersonnel/${in_id}/`,
         {name: name, desc: desc, email: email},
         {
@@ -48,9 +48,9 @@ export default function EditPersonnel() {
       console.log(err);
     } finally {
       setIsLoading(false);
-      // return to 'View All' i.e. root path.
       navigate("/");
     }
+    
   }
 
   return (

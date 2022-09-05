@@ -11,18 +11,20 @@ class CallPersonnelViewSet(viewsets.ModelViewSet):
     serializer_class = CallPersonnelSerializer
 
 def sendEmail(request):
-    ses = boto3.client('ses')
-
+    queryset = CallPersonnel.objects.all()
+    toAddressList = []
+    for e in queryset:
+        toAddressList.append(e.email)
     # send emails.
+    ses = boto3.client('ses')
     status_code = ses.send_templated_email (
         Source = 'jrenjqgithub@gmail.com',
         Destination = {
-            'ToAddresses': ['jren9982@gmail.com'],
-            'CcAddresses': ['jren3321@gmail.com']
+            'ToAddresses': toAddressList,
+            'CcAddresses': ['jrenjqgithub@gmail.com']
         },
-        ReplyToAddresses = ['jren9982@gmail.com'],
+        ReplyToAddresses = ['jrenjqgithub@gmail.com'],
         Template = 'Jren',
         TemplateData = '{"replace tag name": "with value"}'
     )
-    print(status_code)
     return HttpResponse("<h1>email sent successfully!</h1><p>You may return to the previous page now.</p>")
